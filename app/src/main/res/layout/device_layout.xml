@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/margin_small"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/device_image_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+        <ImageView
+            android:id="@+id/device_image_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_tiny"
+            android:contentDescription="@string/device_image_background"
+            android:src="@drawable/thumbnail_background_solid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/device_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:contentDescription="@string/device_image"
+            android:src="@drawable/ic_unknown_device"
+            android:tint="@color/grey_5"
+            app:layout_constraintStart_toStartOf="@id/device_image_background"
+            app:layout_constraintTop_toTopOf="@id/device_image_background"
+            app:layout_constraintEnd_toEndOf="@id/device_image_background"
+            app:layout_constraintBottom_toBottomOf="@id/device_image_background"/>
+
+        <ImageView
+            android:id="@+id/device_image_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/device_image_status"
+            android:src="@drawable/status_mark_connected"
+            app:layout_constraintEnd_toEndOf="@id/device_image_background"
+            app:layout_constraintBottom_toBottomOf="@id/device_image_background" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/device_image_layout"
+        app:layout_constraintTop_toTopOf="@id/device_image_layout"
+        app:layout_constraintBottom_toBottomOf="@id/device_image_layout" >
+
+        <TextView
+            android:id="@+id/device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/device_name_default"
+            android:textSize="@dimen/device_name_textsize"
+            android:layout_marginStart="@dimen/margin_small" />
+
+        <TextView
+            android:id="@+id/device_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_tiny"
+            android:text="@string/currently_connected"
+            android:drawableStart="@drawable/ic_schedule_24px"
+            android:drawablePadding="@dimen/margin_tiny"
+            android:drawableTint="@color/grey_40"
+            android:layout_marginStart="@dimen/margin_small" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/connection_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:contentDescription="@string/device_connection_button"
+        android:src="@drawable/ic_btn_disconnect"
+        android:tint="@color/grey_60"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

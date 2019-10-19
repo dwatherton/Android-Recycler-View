@@ -31,4 +31,9 @@
     <string name="recently">Recently</string>
     <string name="long_time_ago">A long time ago</string>
     <string name="never_connected">Never connected</string>
+    <!-- image content descriptions-->
+    <string name="device_image_background">Device image background</string>
+    <string name="device_image">Device image</string>
+    <string name="device_image_status">Device image status</string>
+    <string name="device_connection_button">Device connection button</string>
 </resources>

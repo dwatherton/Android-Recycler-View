@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Random;
 
 import edu.ualr.recyclerviewassignment.model.Device;
+import edu.ualr.recyclerviewassignment.model.Item;
+import edu.ualr.recyclerviewassignment.model.SectionHeader;
 
 /**
  * Created by irconde on 2019-10-04.
@@ -19,13 +21,14 @@ public class DataGenerator {
         return r.nextInt((max - min) + 1) + min;
     }
 
-    public static List<Device> getDevicesDataset(int datasetSize) {
+    public static List<Item> getDevicesDataset(int datasetSize) {
         Device device;
-        Device section;
+        SectionHeader sectionHeader;
+        SectionHeader.Header section;
         String id;
         Device.DeviceStatus status;
         Device.DeviceType type;
-        List<Device> items = new ArrayList<>();
+        List<Item> items = new ArrayList<>();
         for (int i = 0; i < datasetSize; i++) {
             type = Device.DeviceType.values()[randInt(6)];
             id = type.toString() + "-" + String.valueOf(i);
@@ -35,6 +38,12 @@ public class DataGenerator {
             device.setName(id);
             device.setDeviceType(type);
             items.add(device);
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            section = SectionHeader.Header.values()[i];
+            sectionHeader = new SectionHeader(section);
+            items.add(sectionHeader);
         }
         Collections.shuffle(items);
         return items;

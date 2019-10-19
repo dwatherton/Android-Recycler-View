@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by irconde on 2019-10-04.
  */
-public class Device {
+public class Device extends Item {
     private String name;
     private DeviceType deviceType;
     private Date lastConnection;
@@ -23,6 +23,7 @@ public class Device {
     private DeviceStatus deviceStatus;
 
     public Device(@NonNull String deviceId) {
+        super(false);
         this.lastConnection = null;
         this.name = "";
         this.deviceStatus = DeviceStatus.Linked;
@@ -30,6 +31,7 @@ public class Device {
     }
 
     public Device(final Device device) {
+        super(false);
         name = device.getName();
         deviceStatus = device.getDeviceStatus();
         deviceType = device.getDeviceType();
@@ -69,8 +71,8 @@ public class Device {
         Unknown,
         Desktop,
         Laptop,
-        Tablet,
         Smartphone,
+        Tablet,
         SmartTV,
         GameConsole
     }

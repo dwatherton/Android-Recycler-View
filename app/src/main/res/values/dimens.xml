@@ -19,4 +19,7 @@
     <dimen name="spacing_xxlarge">50dp</dimen>
     <!-- Drawer width -->
     <dimen name="drawer_width">250dp</dimen>
+    <!-- Text Sizes -->
+    <dimen name="device_name_textsize">18sp</dimen>
+    <dimen name="header_textsize">16sp</dimen>
 </resources>
